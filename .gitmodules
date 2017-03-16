@@ -1,0 +1,3 @@
+[submodule "pesdk-cordova-demo"]
+	path = pesdk-cordova-demo
+	url = git@github.com:imgly/pesdk-cordova-demo.git
