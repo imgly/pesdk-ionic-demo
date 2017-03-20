@@ -3,7 +3,7 @@
 </p>
 
 # PhotoEditor SDK Ionic Plugin Demo
-This project shows how to easily integrate the [PhotoEditorSDK](https://www.photoeditorsdk.com?utm_source=Github&utm_medium=PESDK&utm_term=Cordova-Demo) into an Ionic application using our [cordova demo plugin](https://github.com/imgly/pesdk-cordova-demo).
+This project shows how to easily integrate the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo) into an Ionic application using our [cordova demo plugin](https://github.com/imgly/pesdk-cordova-demo).
 
 **THIS IS A DEMO**. This repository is not meant as a fully fledged Ionic plugin, but as a base for further development instead. See the [plugin repository](https://github.com/imgly/pesdk-cordova-demo) for more details on how to implement a full plugin for your use case.
 
@@ -12,10 +12,10 @@ The included example app demonstrates how to open the PhotoEditor SDK's camera a
 
 ## Note 
 The PhotoEditorSDK is a product of 9elements GmbH. 
-Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_source=Github&utm_medium=PESDK&utm_term=Cordova-Demo). Please see the included [LICENSE](LICENSE.md) for licensing details.
+Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo). Please see the included [LICENSE](LICENSE.md) for licensing details.
 
 ## PhotoEditor SDK for iOS & Android
-The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=Cordova-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your Cordova app within minutes.
+The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your Cordova app within minutes.
 
 ## Setup Process
 The example app was created using the following commands: 
