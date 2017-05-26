@@ -10,7 +10,7 @@ This project shows how to easily integrate the [PhotoEditor SDK](https://www.pho
 ## Example App
 The included example app demonstrates how to open the PhotoEditor SDK's camera and pass any taken or selected images to the editor. When an edited image is saved, its filepath is sent back to Ionic and displayed using a JavaScript alert. An app could then display this image in Ionic or send it to a backend. To launch the example app, take a look at the *Launch Example* section below.
 
-## Note 
+## License 
 The PhotoEditorSDK is a product of 9elements GmbH. 
 Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo). Please see the included [LICENSE](LICENSE.md) for licensing details.
 
