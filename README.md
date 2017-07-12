@@ -24,33 +24,38 @@ The example app was created using the following commands:
 $ git init
 $ ionic start PESDKDemo blank --v2
 $ cd PESDKDemo
-$ ionic platform add android
-$ ionic platform add ios
+$ ionic cordova platform add android
+$ ionic cordova platform add ios
 ```
 
 This creates a new Ionic app and adds the iOS and Android platforms. You can then add our `pesdk-cordova-demo` as a submodule and add it as a plugin to the Ionic app:
 
 ```
 $ git submodule add git@github.com:imgly/pesdk-cordova-demo.git
-$ ionic plugin add --searchpath ../pesdk-cordova-demo cordova-plugin-pesdk
+$ cordova plugin add ../pesdk-cordova-demo --nofetch
 ```
 
 For iOS you need to manually set the `Always Embed Swift Standard Libraries` flag in the Xcode projects build settings. Otherwise the app will crash upon launch. Furthermore you need to add your PESDK license files as `LICENSE_ANDROID` and `LICENSE_IOS` for each platform and change the usage descriptions for accessing camera and photo library on iOS. Take a look at our [cordova demo](https://github.com/imgly/pesdk-cordova-demo) for more details.
 
 ## Launch Example
-In order to launch the example app on devices or emulators you need to run the following commands from the `/PESDKDemo` directory:
+Once you cloned this repository, you need to run the following commands in order to launch the example app on devices or emulators you need to run the following commands from the `/PESDKDemo` directory:
 ```
-$ ionic build ios
-$ ionic build android
+$ git submodule update
+$ npm install
+$ ionic cordova build ios
+$ ionic cordova build android
 $ cp LICENSE_ANDROID platforms/android/assets
+$ cordova plugin add ../pesdk-cordova-demo --nofetch
 ```
+
+**Note:** Cordova 7.0 and Ionic 3.5 changed the CLI interfaces and created some issues when installing the PhotoEditor SDK plugin from a local folder. Using the `cordova` CLI interface directly should fix these issues.
 
 This builds the app for both platforms and copies the Android license file to the corresponding directory. Afterwards you need to add the `LICENSE_IOS` file to the iOS app by opening [PESDKDemo.xcworkspace](/example/platforms/ios/PESDKDemo.xcworkspace) using Xcode and dragging the license file into the sidebar. Within Xcode you then need to enable the `Always Embed Swift Standard Libraries` build setting for the PESDKDemo target.
 
 Once all license copying is done and both platforms have been built, the app can be run using the following commands:
 ```
-$ ionic emulate ios
-$ ionic emulate android
+$ ionic cordova emulate ios
+$ ionic cordova emulate android
 ```
 
 ## Running in the Browser
