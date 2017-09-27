@@ -28,14 +28,21 @@ $ ionic cordova platform add android
 $ ionic cordova platform add ios
 ```
 
-This creates a new Ionic app and adds the iOS and Android platforms. You can then add our `pesdk-cordova-demo` as a submodule and add it as a plugin to the Ionic app:
+This creates a new Ionic app and adds the iOS and Android platforms. You can then add our `pesdk-cordova-demo` as a submodule in the **root directory** and add it as a plugin to the Ionic app:
 
 ```
+$ cd ..
 $ git submodule add git@github.com:imgly/pesdk-cordova-demo.git
+```
+
+Once this is done, you can go back into your PESDKDemo ionic project and link the plugin from within the parent directory:
+
+```
+$ cd PESDKDemo
 $ cordova plugin add ../pesdk-cordova-demo --nofetch
 ```
 
-For iOS you need to manually set the `Always Embed Swift Standard Libraries` flag in the Xcode projects build settings. Otherwise the app will crash upon launch. Furthermore you need to add your PESDK license files as `LICENSE_ANDROID` and `LICENSE_IOS` for each platform and change the usage descriptions for accessing camera and photo library on iOS. Take a look at our [cordova demo](https://github.com/imgly/pesdk-cordova-demo) for more details.
+For iOS you need to manually set the `Always Embed Swift Standard Libraries` flag in the Xcode projects build settings. Otherwise the app will crash upon launch. Furthermore you need to add your PESDK license files as `LICENSE_ANDROID` and `LICENSE_IOS` for each platform and change the usage descriptions for accessing camera and photo library on iOS. Take a look at our [cordova demo](https://github.com/imgly/pesdk-cordova-demo) for more details on how to modify the native plugins to match your requirements.
 
 ## Launch Example
 Once you cloned this repository, you need to run the following commands in order to launch the example app on devices or emulators you need to run the following commands from the `/PESDKDemo` directory:
