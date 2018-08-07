@@ -84,4 +84,4 @@ Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICE
 Made 2013-2018 by @9elements
 
 ## Support or Contact
-Contact contact@photoeditorsdk.com for support requests or to upgrade to an enterprise licence.
+Use our service desk (Hyperlink to: https://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the license request form (Hyperlink to: https://www.photoeditorsdk.com/pricing) on our website.
