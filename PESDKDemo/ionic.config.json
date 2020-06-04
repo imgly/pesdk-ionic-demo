@@ -1,8 +1,7 @@
 {
-  "name": "PESDKDemo",
-  "app_id": "",
-  "type": "ionic-angular",
+  "name": "MyIonicProject",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "angular"
 }
