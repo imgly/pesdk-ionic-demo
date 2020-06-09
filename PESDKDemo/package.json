@@ -1,5 +1,5 @@
 {
-  "name": "MyIonicProject",
+  "name": "PESDKDemo",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -25,8 +25,6 @@
     "@ionic/angular": "^5.0.0",
     "cordova-android": "^8.1.0",
     "cordova-ios": "^5.1.1",
-    "cordova-plugin-add-swift-support": "^2.0.2",
-    "cordova-plugin-pesdk": "file:../cordova-plugin-pesdk",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -68,8 +66,7 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-pesdk": {}
+      "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
       "android",
