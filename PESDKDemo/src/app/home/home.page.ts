@@ -37,11 +37,57 @@ export class HomePage {
 
     var defaultConfig = PESDK_DEFAULT_CONFIGURATION; // get the default configuration
     
+    var config = {
+      // Configure sticker tool
+      sticker: {
+        // Enable personal stickers
+        personalStickers: true,
+        // Configure stickers
+        categories: [
+          // Create sticker category with stickers
+          {
+            identifier: 'example_sticker_category_logos',
+            name: 'Logos',
+            thumbnailURI:
+                'https://cdn1.iconfinder.com/data/icons/hawcons/32/700175-icon-1-cloud-512.png',
+            items: [
+              {
+                identifier: 'example_sticker_logos_cordova',
+                name: 'Cordova',
+                stickerURI: PESDK.loadResource('www/assets/cordova.png'),
+              },
+              {
+                identifier: 'example_sticker_logos_imgly',
+                name: 'img.ly',
+                stickerURI: PESDK.loadResource('www/assets/imgly-Logo.png'),
+              },
+              {
+                identifier: 'example_sticker_logos_js',
+                name: 'JS',
+                stickerURI: PESDK.loadResource('www/assets/javascript.png'),
+              },
+            ]
+          },
+          // Use existing sticker category
+          {identifier: 'imgly_sticker_category_emoticons'},
+          // Modify existing sticker category
+          {
+            identifier: 'imgly_sticker_category_shapes',
+            items: [
+              {identifier: 'imgly_sticker_shapes_badge_01'},
+              {identifier: 'imgly_sticker_shapes_arrow_02'},
+              {identifier: 'imgly_sticker_shapes_spray_03'},
+            ]
+          },
+        ]
+      }
+    };
+
     PESDK.openEditor(
         this.pesdk_success,
         this.pesdk_failure,
         PESDK.loadResource('www/assets/LA.jpg'),
-        defaultConfig
+        config
     );
   }
 }
