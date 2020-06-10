@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { SerializationExportType } from 'platforms/ios/platform_www/plugins/cordova-plugin-pesdk/www/configuration';
 
 declare var PESDK;
 declare var PESDK_DEFAULT_CONFIGURATION;
+
+let serialization = null;
 
 @Component({
   selector: 'app-home',
@@ -12,17 +15,18 @@ export class HomePage {
 
   constructor() { }
 
-  // let serialization = null;
+  // private serialization = null;
 
   pesdk_success(result) {
     // console.log('pesdk_success: ' + JSON.stringify(result))
-    // if (result.serialization != null) {
-    //   serialization = result.serialization;
-    // }
+    if (result.serialization != null) {
+      serialization = result.serialization;
+    }
     alert('PESDK result: ' + result.image);
   };
 
   pesdk_failure(error) {
+    alert('pesdk_failure: ' + JSON.stringify(error));
     console.log('pesdk_failure: ' + JSON.stringify(error))
   };
 
@@ -83,11 +87,30 @@ export class HomePage {
       }
     };
 
+
+
     PESDK.openEditor(
         this.pesdk_success,
         this.pesdk_failure,
         PESDK.loadResource('www/assets/LA.jpg'),
         config
     );
+  }
+
+  onButtonClickSerialization(event) {
+    var config = {
+      export: {
+        serialization: {
+          enabled: true,
+          exportType: SerializationExportType.OBJECT,
+        }
+      }
+    };
+    PESDK.openEditor(
+      this.pesdk_success,
+      this.pesdk_failure,
+      PESDK.loadResource('www/assets/LA.jpg'),
+      config,
+      serialization);
   }
 }
