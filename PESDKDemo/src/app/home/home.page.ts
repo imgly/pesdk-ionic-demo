@@ -27,14 +27,21 @@ export class HomePage {
   };
 
   onButtonClick(event) {
-    console.log('Opening PESDK...');
 
-    // var defaultConfig = PESDK_DEFAULT_CONFIGURATION; // get the default configuration
+    /* The license should have an extension like this:
+          for iOS: "xxx.ios", example: pesdk_license.ios
+          for Android: "xxx.android", example: pesdk_license.android
+          then pass just the name without the extension to the
+       `unlockWithLicense` function */
+    PESDK.unlockWithLicense('www/assets/pesdk_license');
+
+    var defaultConfig = PESDK_DEFAULT_CONFIGURATION; // get the default configuration
+    
     PESDK.openEditor(
         this.pesdk_success,
         this.pesdk_failure,
-        PESDK.loadResource('www/assets/LA.jpg')
-        // defaultConfig
-      );
+        PESDK.loadResource('www/assets/LA.jpg'),
+        defaultConfig
+    );
   }
 }
