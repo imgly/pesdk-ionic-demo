@@ -41,3 +41,7 @@ demos/src/**/*.ngfactory.ts
 demos/src/**/*.d.ts
 demos/src/**/*.metadata.json
 demos/src/**/*.css.shim.ts
+
+
+# plugin should be added online, this is just for testing
+cordova-plugin-pesdk
