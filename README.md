@@ -1,87 +1,77 @@
 <p align="center">
-  <img src="http://static.photoeditorsdk.com/logo.png" />
+  <a href="https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=Ionic-Demo">
+    <img src="http://static.photoeditorsdk.com/logo.png" alt="PhotoEditor SDK Logo"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://npmjs.org/package/cordova-plugin-photoeditorsdk">
+    <img src="https://img.shields.io/npm/v/cordova-plugin-photoeditorsdk.svg" alt="NPM version">
+  </a>
+  <img src="https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg" alt="Platform support">
+  <a href="http://twitter.com/PhotoEditorSDK">
+    <img src="https://img.shields.io/badge/twitter-@PhotoEditorSDK-blue.svg?style=flat" alt="Twitter">
+  </a>
 </p>
 
-# PhotoEditor SDK Ionic Plugin Demo
-This project shows how to easily integrate the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo) into an Ionic application using our [cordova demo plugin](https://github.com/imgly/pesdk-cordova-demo).
+# PhotoEditor SDK Ionic Example App
 
-**THIS IS A DEMO**. This repository is not meant as a fully fledged Ionic plugin, but as a base for further development instead. See the [plugin repository](https://github.com/imgly/pesdk-cordova-demo) for more details on how to implement a full plugin for your use case.
+This project shows how to integrate [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=Ionic-Demo) into an Ionic application with the [Cordova plugin for PhotoEditor SDK](https://github.com/imgly/pesdk-cordova) which is available via NPM as [`cordova-plugin-photoeditorsdk`](https://www.npmjs.com/package/cordova-plugin-photoeditorsdk).
 
-## Example App
-The included example app demonstrates how to open the PhotoEditor SDK's camera and pass any taken or selected images to the editor. When an edited image is saved, its filepath is sent back to Ionic and displayed using a JavaScript alert. An app could then display this image in Ionic or send it to a backend. To launch the example app, take a look at the *Launch Example* section below.
+## Getting started
 
-## License 
-The PhotoEditorSDK is a product of img.ly GmbH. 
-Please [request a license](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo). Please see the included [LICENSE](LICENSE.md) for licensing details.
+After cloning this repository, perform the following steps to run the example application:
+
+1. Add platforms to your project as follows:
+   ```sh
+   ionic cordova platform add android
+   # or/and
+   ionic cordova platform add ios
+   ```
+
+2. Add PhotoEditor SDK plugin to your project as follows:
+   ```sh
+   ionic cordova plugin add cordova-plugin-photoeditorsdk
+   ```
+
+3. Run the application:
+   ```sh
+   # run Android
+   ionic cordova run android
+   # run iOS
+   ionic cordova run ios
+   ```
+
+## Unlock the SDK
+
+PhotoEditor SDK is a product of img.ly GmbH. Without unlocking, the SDK is fully functional but a watermark is added on top of the image preview and any exported images.
+In order to remove the watermark and to use PhotoEditor SDK within your app **you'll need to [request a license](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=Ionic-Demo) for each platform and load the license file(s)** in your app with the following single line of code that automatically resolves multiple license files via platform-specific file extensions.
+
+Rename your license files:
+- Android license: `ANY_NAME.android`
+- iOS license: `ANY_NAME.ios`
+
+Pass the file path without the extension to the `unlockWithLicense` function to unlock both iOS and Android:
+```js
+PESDK.unlockWithLicense('www/assets/ANY_NAME');
+```
+
+#### Notes for Ionic framework
+
+- Add this line above your class to be able to use `PESDK`.
+  ```js
+  declare var PESDK;
+  ```
+- Ionic will generate a `www` folder that will contain your compiled code and your assets. In order to pass resources to PhotoEditor SDK you need to use this folder.
 
 ## PhotoEditor SDK for iOS & Android
-The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your Cordova app within minutes.
 
-## Setup Process
+The Cordova plugin for PhotoEditor SDK includes a rich set of most commonly used [configuration and customization options](https://github.com/imgly/pesdk-cordova/blob/master/types/configuration.ts) of PhotoEditor SDK for iOS and Android. The native frameworks provide **fully customizable** photo editors. Please refer to [our documentation](https://docs.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=Ionic-Demo) for more details.
 
-:warning: Created using `Cordova 8.0.0` and `Ionic CLI 3.20`.
+## License Terms
 
-The example app was created using the following commands:
+Make sure you have a [commercial license](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=Ionic-Demo) for PhotoEditor SDK before releasing your app.
+A commercial license is required for any app or service that has any form of monetization: This includes free apps with in-app purchases or ad supported applications. Please contact us if you want to purchase the commercial license.
 
-To begin, clone the PESDK Cordova plugin demo to your root directory and add it as a submodule:
+## Support and License
 
-```bash
-$ git init
-$ git submodule add git@github.com:imgly/pesdk-cordova-demo.git
-```
-
-Move on with creating a new Ionic app and adding the iOS and Android platforms:
-
-```bash
-$ ionic start PESDKDemo blank
-# Select yes, when asked about integrating Cordova to target native iOS and Android.
-$ cd PESDKDemo
-$ ionic cordova platform add android
-$ ionic cordova platform add ios
-```
-
-You can then add our `pesdk-cordova-demo` as a plugin to the Ionic app:
-
-```bash
-$ ionic cordova plugin add ../pesdk-cordova-demo --nofetch
-```
-
-This will use the plugin source files from the submodule you created before to add the PESDK plugin to both platforms.
-
-## Licensing and further customizations
-For iOS you need to manually add your PESDK license file as `LICENSE_IOS` to the Xcode project. On Android, the license file just needs to be added to the `/app/main/assets` directory as `LICENSE_ANDROID`. Take a look at our [cordova demo](https://github.com/imgly/pesdk-cordova-demo) for more details on how to modify the native plugins to match your requirements.
-
-:warning: **You'll need to make sure the Ionic ID/iOS Bundle ID/Android App ID matches your license file**
-
-## Launch Example
-Once you cloned this repository, you need to run the following commands in order to launch the example app on devices or emulators:
-```bash
-$ git submodule update
-$ cd PESDKDemo
-$ npm install
-$ ionic cordova build ios
-$ ionic cordova build android
-$ cp LICENSE_ANDROID platforms/android/assets
-$ cordova plugin add ../pesdk-cordova-demo --nofetch
-```
-
-This builds the app for both platforms and copies the Android license file to the corresponding directory. Afterwards you need to add the `LICENSE_IOS` file to the iOS app by opening [PESDKDemo.xcworkspace](/example/platforms/ios/PESDKDemo.xcworkspace) using Xcode and dragging the license file into the sidebar.
-
-Once all license copying is done and both platforms have been built, the app can be run using the following commands:
-```
-$ ionic cordova emulate ios
-$ ionic cordova emulate android
-```
-
-## Running in the Browser
-
-The app will run in your browser using ```ionic serve```, but will throw an error upon clicking the 'Open PhotoEditor SDK' button, as there is no browser implementation.
-
-## License
-Please see [LICENSE](https://github.com/imgly/pesdk-html5-rails/blob/master/LICENSE.md) for licensing details.
-
-## Authors and Contributors
-Made 2013-2019 by img.ly
-
-## Support or Contact
-Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=Ionic-Demo) on our website.
+Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=Ionic-Demo) on our website.

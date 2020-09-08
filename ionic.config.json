@@ -1,0 +1,7 @@
+{
+  "name": "PESDK Example",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
